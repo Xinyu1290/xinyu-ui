@@ -33,7 +33,11 @@ import 'xinyu-ui/dist/xinyu-ui.css'
 ## 组件
 
 ### 按钮(Button)
-
+1.使用type、plain、disabled,round和circle属性来定义 Button 的样式
+```js
+<xy-button type="primary" >这是一个dialog</xy-button>
+<xy-button type="primary" disabled>这是一个dialog</xy-button>
+```
 <br>
 
 | 属性     | 值               | 描述                                                                 |
@@ -57,6 +61,40 @@ import 'xinyu-ui/dist/xinyu-ui.css'
 <br>
 
 ### 对话框(Dialog)
+1.Dialog 弹出一个对话框，适合需要定制性更大的场景
+```js
+   <xy-Dialog :visiable.sync="visiable" title="表单"  width="30%">
+    <xy-Form :model="form" >
+    <xy-FormItem label="账号">
+    <xy-Input  placeholder="请输入账号"  v-model="form.name" />
+    </xy-FormItem>
+<xy-FormItem label="密码">
+    <xy-Input  type="password"   placeholder="请输入密码" v-model="form.password" />
+</xy-FormItem>
+</xy-Form>
+<div slot="footer" >
+    <xy-button type="primary"  @click="visiable = false" >确定</xy-button>
+    <xy-button @click="visiable = false" > 取消 </xy-button>
+</div>
+</xy-Dialog>
+
+export default {
+    name: 'App',
+    data(){
+        return{
+            visiable:false,
+            form:{
+                name:'',
+                password:'',
+            }
+        }
+    },
+    components: {
+
+    }
+}
+```
+
 
 <br>
 
