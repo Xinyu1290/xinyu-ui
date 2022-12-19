@@ -2,14 +2,14 @@
 
 ## 简介
 
-一个支持拟态风格的 Vue UI 组件
+一个前端vue的 UI 组件库
 
 ## 使用
 
 1. 安装
 
 ```
-npm i xinyu-ui
+npm install xinyu-ui
 ```
 
 2. 全局注册
