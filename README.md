@@ -63,8 +63,8 @@ import 'xinyu-ui/dist/xinyu-ui.css'
 ### 对话框(Dialog)
 1.Dialog 弹出一个对话框，适合需要定制性更大的场景
 ```js
- <xy-button type="primary" @click="visiable=true" >这是一个dialog</xy-button>
-   <xy-Dialog :visiable.sync="visiable" title="表单"  width="30%">
+<xy-button type="primary" @click="visiable=true" >这是一个dialog</xy-button>
+ <xy-Dialog :visiable.sync="visiable" title="表单"  width="30%">
     <xy-Form :model="form" >
       <xy-FormItem label="账号">
        <xy-Input  placeholder="请输入账号"  v-model="form.name" />
@@ -77,7 +77,9 @@ import 'xinyu-ui/dist/xinyu-ui.css'
     <xy-button type="primary"  @click="visiable = false" >确定</xy-button>
     <xy-button @click="visiable = false" > 取消 </xy-button>
     </div>
-   </xy-Dialog>
+ </xy-Dialog>
+
+
 <script>
 export default {
     data(){
@@ -119,18 +121,19 @@ export default {
 
 1.通过鼠标或键盘输入字符
 ```js
-    账号 <xy-Input  v-model="input" placeholder="请输入账号 "  clearable />
-    <br>
-    密码 <xy-Input  type="password"  v-model="password" showPassword  placeholder="请输入密码 "/ >
-    <br>
-    <script>
+账号:<xy-Input  v-model="input" placeholder="请输入账号 "  clearable />
+<br>
+密码:<xy-Input  type="password"  v-model="password" showPassword  placeholder="请输入密码 "/ >
+<br>
+    
+<script>
     data(){
       return{
           input:'',
           password:''
         }
      }
-    </script>
+</script>
 ```
 <br>
 
@@ -149,11 +152,12 @@ export default {
 ### 切换(Switch)
 1.表示两种相互对立的状态间的切换，多用于触发「开/关」。
 ```js
-    <xy-Switch   v-model="switch1"  active-text="按月21付费" inactive-text="按年3付费"  >
+<xy-Switch   v-model="switch1"  active-text="按月21付费" inactive-text="按年3付费"  >
     </xy-Switch>
     <br>
     <xy-Switch v-model="switch2"  active-color="blue" inactive-color="yellow"  active-text="按月付费">
-    </xy-Switch>
+</xy-Switch>
+        
    <script>
        data(){
          return{
@@ -187,8 +191,9 @@ export default {
 ### 单选框(Radio)
 1.在一组备选项中进行单选
 ```js
-      <xy-radio v-model="radio" label='1' color="red" >备选项1</xy-radio>
-      <xy-radio v-model="radio" label="2">备选项2</xy-radio> 
+<xy-radio v-model="radio" label='1' color="red" >备选项1</xy-radio>
+<xy-radio v-model="radio" label="2">备选项2</xy-radio> 
+
    <script>
        data(){
          return{
@@ -213,13 +218,14 @@ export default {
 ### 单选框组(RadioGroup)
 1.在一组备选项中进行单选
 ```js
-   <xy-radiogroup v-model="radio">
+<xy-radiogroup v-model="radio">
        <xy-radio  label='1' >备选项1</xy-radio>
        <xy-radio  label="2" >备选项2</xy-radio>
        <xy-radio  label="3" >备选项3</xy-radio>
        <xy-radio  label="4" >备选项4</xy-radio>
        <xy-radio  label="5" >备选项5</xy-radio>
-   </xy-radiogroup>
+</xy-radiogroup>
+
    <script>
        data(){
          return{
@@ -241,14 +247,15 @@ export default {
 ### 复选框(Checkbox)
 1.一组备选项中进行多选
 ```js
- <xyCheckbox v-model="check" >是否选中</xyCheckbox>
-   <script>
+<xyCheckbox v-model="check" >是否选中</xyCheckbox>
+
+<script>
        data(){
          return{
            check: true,
          }
         }
-    </script>
+</script>
 ```
 
 <br>
@@ -266,20 +273,21 @@ export default {
 ### 复选框组(CheckboxGroup)
 1.几个备选项中进行多选
 ```js
-  <xy-CheckboxGroup v-model="checkList" >
+<xy-CheckboxGroup v-model="checkList" >
     <xy-Checkbox label="复选框 A"></xy-Checkbox>
     <xy-Checkbox label="复选框 B"></xy-Checkbox>
     <xy-Checkbox label="复选框 C"></xy-Checkbox>
     <xy-Checkbox label="禁用" disabled></xy-Checkbox>
     <xy-Checkbox label="选中且禁用" disabled></xy-Checkbox>
-  </xy-CheckboxGroup>
-   <script>
-       data(){
+</xy-CheckboxGroup>
+
+<script>
+    data(){
          return{
             checkList: ['选中且禁用','复选框 A'],
          }
-        }
-    </script>
+    }
+</script>
 ```
 <br>
 
@@ -294,14 +302,15 @@ export default {
 ### 表单项(Form-item)
 1.表单
 ```js
-    <xy-Form :model="form" >
-      <xy-FormItem label="账号">
-       <xy-Input  placeholder="请输入账号"  v-model="form.name" />
-      </xy-FormItem>
-      <xy-FormItem label="密码">
+<xy-Form :model="form" >
+    <xy-FormItem label="账号">
+       <xy-Input  placeholder="请输入账号"  v-model="form.name" /> 
+    </xy-FormItem>
+   <xy-FormItem label="密码">
        <xy-Input  type="password"   placeholder="请输入密码" v-model="form.password" />
-      </xy-FormItem>
-    </xy-Form>
+    </xy-FormItem>
+</xy-Form>
+
 <script>
 export default {
     data(){
